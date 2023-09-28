@@ -82,6 +82,7 @@ void MainWindow::mix() // Функция перераспределения ва
     }
 }
 
+// 1 вопрос
 void MainWindow::on_radioButton_1_1_clicked()
 {
     ui->pushButton_1_accept->setEnabled(true);
@@ -102,7 +103,7 @@ void MainWindow::on_radioButton_1_4_clicked()
     ui->pushButton_1_accept->setEnabled(true);
 }
 
-void MainWindow::on_pushButton_1_accept_clicked()
+void MainWindow::on_pushButton_1_accept_clicked(
 {
     if (ui->radioButton_1_1->isChecked()){
         ui->tableWidget->item(0,0)->setText("+");
@@ -117,3 +118,11 @@ void MainWindow::on_pushButton_1_accept_clicked()
     ui->tabWidget->setTabEnabled(1, false);
 
 }
+
+//2 вопрос
+
+//3 вопрос
+
+//4 вопрос
+
+//5 вопрос
