@@ -40,6 +40,48 @@ private slots:
 
     void on_pushButton_1_accept_clicked();
 
+    void on_radioButton_2_1_clicked();
+
+    void on_radioButton_2_2_clicked();
+
+    void on_radioButton_2_3_clicked();
+
+    void on_radioButton_2_4_clicked();
+
+    void on_pushButton_2_accept_clicked();
+
+    void clear_mem();
+
+    void on_radioButton_3_1_clicked();
+
+    void on_radioButton_3_2_clicked();
+
+    void on_radioButton_3_3_clicked();
+
+    void on_radioButton_3_4_clicked();
+
+    void on_pushButton_3_accept_clicked();
+
+    void on_radioButton_4_1_clicked();
+
+    void on_radioButton_4_2_clicked();
+
+    void on_radioButton_4_3_clicked();
+
+    void on_radioButton_4_4_clicked();
+
+    void on_pushButton_4_accept_clicked();
+
+    void on_pushButton_5_accept_clicked();
+
+    void on_radioButton_5_1_clicked();
+
+    void on_radioButton_5_2_clicked();
+
+    void on_radioButton_5_3_clicked();
+
+    void on_radioButton_5_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
