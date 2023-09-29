@@ -6,6 +6,9 @@
 #include <QTime>
 #include <QMessageBox>
 #include <time.h>
+#include <QMovie>
+#include <QLabel>
+#include <QSize>
 
 
 QT_BEGIN_NAMESPACE
@@ -85,8 +88,11 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
+    QMovie *start_gif;
+    QLabel *start_label;
     int mas [4] = {150, 200, 250, 300};
     int counter;
+    int score;
 
 };
 #endif // MAINWINDOW_H

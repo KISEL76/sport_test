@@ -36,7 +36,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -45,10 +45,10 @@
      <widget class="QTextEdit" name="textEdit">
       <property name="geometry">
        <rect>
-        <x>140</x>
-        <y>20</y>
-        <width>631</width>
-        <height>311</height>
+        <x>80</x>
+        <y>50</y>
+        <width>391</width>
+        <height>381</height>
        </rect>
       </property>
       <property name="readOnly">
@@ -64,16 +64,16 @@ li.checked::marker { content: &quot;\2612&quot;; }
 &lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'.AppleSystemUIFont'; font-size:13pt; font-weight:400; font-style:normal;&quot;&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:18pt; font-weight:700;&quot;&gt;Привет!&lt;/span&gt;&lt;/p&gt;
 &lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;И &lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt;Добро Пожаловать&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt; на тестирование знаний по спортивной тематике! &lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Тест пробегается на время, поэтому после нажатия кнопки&lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; font-style:italic;&quot;&gt;&amp;quot;Старт&amp;quot; &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;будет включен таймер, по окончании которого тест финишируется автоматически (DNF). До финиша можно добраться быстрее таймера нажатием на кнопку &lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; font-style:italic;&quot;&gt;&amp;quot;Финишировать тест&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;, после чего ты узнаешь, насколько ты аналитик МАТЧ ТВ! Встретимся на финише!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+&lt;p align=&quot;justify&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;Тест пробегается на время, поэтому после нажатия кнопки&lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700;&quot;&gt; &lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; font-style:italic;&quot;&gt;&amp;quot;Старт&amp;quot; &lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;будет включен таймер. По окончании таймера тест финишируется автоматически (DNF). До финиша можно добраться быстрее таймера нажатием на кнопку &lt;/span&gt;&lt;span style=&quot; font-size:14pt; font-weight:700; font-style:italic;&quot;&gt;&amp;quot;Финишировать тест&amp;quot;&lt;/span&gt;&lt;span style=&quot; font-size:14pt;&quot;&gt;, после чего ты узнаешь, насколько ты аналитик МАТЧ ТВ! Встретимся на финише!&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
       </property>
      </widget>
      <widget class="QPushButton" name="pushButton_start">
       <property name="geometry">
        <rect>
-        <x>350</x>
-        <y>350</y>
-        <width>201</width>
-        <height>81</height>
+        <x>560</x>
+        <y>290</y>
+        <width>221</width>
+        <height>91</height>
        </rect>
       </property>
       <property name="text">
