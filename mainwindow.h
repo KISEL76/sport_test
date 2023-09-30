@@ -1,10 +1,11 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+#include <QCoreApplication>
 #include <QMainWindow>
+#include <QMessageBox>
 #include <QTimer>
 #include <QTime>
-#include <QMessageBox>
 #include <time.h>
 #include <QMovie>
 #include <QLabel>
@@ -84,6 +85,8 @@ private slots:
     void on_radioButton_5_3_clicked();
 
     void on_radioButton_5_4_clicked();
+
+    void on_pushButton_exit_clicked();
 
 private:
     Ui::MainWindow *ui;

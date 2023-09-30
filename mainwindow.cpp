@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) // Конструктор
     score = 0;
 
     start_label = new QLabel(this);
-    start_gif = new QMovie("/Users/kisel/Documents/Qt/Projects/test/start-gravityfalls.gif");
+    start_gif = new QMovie("/Users/kisel/Documents/Qt/Projects/test/pics/start-gravityfalls.gif");
     start_label->setMovie(start_gif);
     start_label->setScaledContents(true);
     start_label->move(500, 80);
@@ -86,6 +86,8 @@ void MainWindow::ticked() // Отсчет времени
 
 void MainWindow::on_pushButton_finish_clicked() // Кнопка финиша теста
 {
+    ui->tabWidget->setTabEnabled(6, true);
+
     ui->tabWidget->setTabEnabled(0, false);
     ui->tabWidget->setTabEnabled(1, false);
     ui->tabWidget->setTabEnabled(2, false);
@@ -93,9 +95,21 @@ void MainWindow::on_pushButton_finish_clicked() // Кнопка финиша т�
     ui->tabWidget->setTabEnabled(4, false);
     ui->tabWidget->setTabEnabled(5, false);
     ui->pushButton_finish->setVisible(false);
-    ui->tabWidget->setTabEnabled(6, true);
 
     timer->stop();
+
+    if (score == 5){
+        ui->label_result->setText("Результат: Прирожденный аналитик МАТЧ ТВ");
+    }
+    else if (score == 4){
+        ui->label_result->setText("Результат: Спорт-ваше второе имя");
+    }
+    else if (score == 3){
+        ui->label_result->setText("Результат: Любитель спорта");
+    }
+    else{
+        ui->label_result->setText("Результат: Вы киберспортсмен");
+    }
 }
 
 void MainWindow::mix() // Перераспределение вариантов
@@ -336,5 +350,24 @@ void MainWindow::on_pushButton_5_accept_clicked()
     ui->pushButton_finish->setVisible(false);
     ui->tabWidget->setTabEnabled(5, false);
     timer->stop();
+
+    if (score == 5){
+        ui->label_result->setText("Результат: Прирожденный аналитик МАТЧ ТВ");
+    }
+    else if (score == 4){
+        ui->label_result->setText("Результат: Спорт-ваше второе имя");
+    }
+    else if (score == 3){
+        ui->label_result->setText("Результат: Любитель спорта");
+    }
+    else{
+        ui->label_result->setText("Результат: Вы киберспортсмен");
+    }
+}
+
+
+void MainWindow::on_pushButton_exit_clicked()
+{
+    QCoreApplication::quit();
 }
 
