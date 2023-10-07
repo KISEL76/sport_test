@@ -32,6 +32,17 @@ MainWindow::MainWindow(QWidget *parent) // Конструктор
     start_label->resize(340, 190);
     start_label->show();
     start_gif->start();
+
+    QPixmap pic_1 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8318.JPG");
+    ui->label->setPixmap(pic_1);
+    QPixmap pic_2 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8319.JPG");
+    ui->label_6->setPixmap(pic_2);
+    QPixmap pic_3 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8320.JPG");
+    ui->label_7->setPixmap(pic_3);
+    QPixmap pic_4 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8321.JPG");
+    ui->label_8->setPixmap(pic_4);
+    QPixmap pic_5 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8322.JPG");
+    ui->label_9->setPixmap(pic_5);
 }
 
 MainWindow::~MainWindow() // Деструктор
@@ -57,10 +68,17 @@ void MainWindow::on_pushButton_start_clicked() // Кнопка старта те
     timer->start(10);
 
     for (int i = 0; i < 5; i++){
-        if (ui->tableWidget->item(i,0) == nullptr){
-            QTableWidgetItem *item = new QTableWidgetItem();
-            ui->tableWidget->setItem(i,0, item);
+        for (int j = 0; j < 1;j++){
+            if (ui->tableWidget->item(i,j) == nullptr){
+                QTableWidgetItem *item = new QTableWidgetItem();
+                ui->tableWidget->setItem(i,j, item);
+            }
         }
+    }
+
+    for (int i = 0; i < 5;i++){
+        ui->tableWidget->item(i,0)->setText("-");
+        ui->tableWidget->item(i,0)->setBackground(Qt::red);
     }
 }
 
@@ -107,7 +125,7 @@ void MainWindow::on_pushButton_finish_clicked() // Кнопка финиша т�
     else if (score == 3){
         ui->label_result->setText("Результат: Любитель спорта");
     }
-    else{
+    else if (score < 3){
         ui->label_result->setText("Результат: Вы киберспортсмен");
     }
 }
@@ -126,14 +144,33 @@ void MainWindow::mix() // Перераспределение вариантов
 
 void MainWindow::clear_mem() // Очистка памяти
 {
-    for (int i = 0; i < 4; i++){
-        if (ui->tableWidget->item(i,0) != nullptr){
-            delete (ui->tableWidget->item(i,0));
+    for (int i = 0; i < 5; i++){
+        for (int j = 0; j < 1; j++)
+            if (ui->tableWidget->item(i,j) != nullptr){
+                delete (ui->tableWidget->item(i,j));
+            }
         }
-    }
-    delete start_gif;
-    delete start_label;
 }
+
+void MainWindow::processRadioButton(QRadioButton *radioButton, QRadioButton *radioButton_1, QRadioButton *radioButton_2, QRadioButton *radioButton_3, int i) {
+        if (radioButton->isChecked()) {
+        ui->tableWidget->item(i,0)->setText("+");
+            ui->tableWidget->item(i,0)->setBackground(Qt::green);
+            score+=1;
+        } else {
+            ui->tableWidget->item(i,0)->setText("-");
+            ui->tableWidget->item(i,0)->setBackground(Qt::red);
+        }
+        ui->tabWidget->setTabEnabled(i+2, true);
+        ui->tabWidget->setTabEnabled(i+1, false);
+
+        mix();
+        radioButton->move(390, mas[0]);
+        radioButton_1->move(390, mas[1]);
+        radioButton_2->move(390, mas[2]);
+        radioButton_3->move(390, mas[3]);
+}
+
 
 // 1 вопрос
 void MainWindow::on_radioButton_1_1_clicked()
@@ -158,26 +195,8 @@ void MainWindow::on_radioButton_1_4_clicked()
 
 void MainWindow::on_pushButton_1_accept_clicked()
 {
-    if (ui->radioButton_1_1->isChecked()){
-        ui->tableWidget->item(0,0)->setText("+");
-        ui->tableWidget->item(0,0)->setBackground(Qt::green);
-        score+=1;
-    }
-    else{
-        ui->tableWidget->item(0,0)->setText("-");
-        ui->tableWidget->item(0,0)->setBackground(Qt::red);
-    }
-
-    ui->tabWidget->setTabEnabled(2, true);
-    ui->tabWidget->setTabEnabled(1, false);
-
-    mix();
-    ui->radioButton_2_1->move(390, mas[0]);
-    ui->radioButton_2_2->move(390, mas[1]);
-    ui->radioButton_2_3->move(390, mas[2]);
-    ui->radioButton_2_4->move(390, mas[3]);
+    processRadioButton(ui->radioButton_1_1,ui->radioButton_1_2, ui->radioButton_1_3, ui->radioButton_1_4, 0);
     ui->pushButton_2_accept->setEnabled(false);
-
 }
 
 //2 вопрос
@@ -204,24 +223,7 @@ void MainWindow::on_radioButton_2_4_clicked()
 
 void MainWindow::on_pushButton_2_accept_clicked()
 {
-    if (ui->radioButton_2_4->isChecked()){
-        ui->tableWidget->item(1,0)->setText("+");
-        score+=1;
-        ui->tableWidget->item(1,0)->setBackground(Qt::green);
-    }
-    else{
-        ui->tableWidget->item(1,0)->setText("-");
-        ui->tableWidget->item(1,0)->setBackground(Qt::red);
-    }
-
-    ui->tabWidget->setTabEnabled(3, true);
-    ui->tabWidget->setTabEnabled(2, false);
-
-    mix();
-    ui->radioButton_3_1->move(390, mas[0]);
-    ui->radioButton_3_2->move(390, mas[1]);
-    ui->radioButton_3_3->move(390, mas[2]);
-    ui->radioButton_3_4->move(390, mas[3]);
+    processRadioButton(ui->radioButton_2_4,ui->radioButton_2_1, ui->radioButton_2_2, ui->radioButton_2_3, 1);
     ui->pushButton_3_accept->setEnabled(false);
 }
 
@@ -248,24 +250,7 @@ void MainWindow::on_radioButton_3_4_clicked()
 
 void MainWindow::on_pushButton_3_accept_clicked()
 {
-    if (ui->radioButton_3_3->isChecked()){
-        ui->tableWidget->item(2,0)->setText("+");
-        score+=1;
-        ui->tableWidget->item(2,0)->setBackground(Qt::green);
-    }
-    else{
-        ui->tableWidget->item(2,0)->setText("-");
-        ui->tableWidget->item(2,0)->setBackground(Qt::red);
-    }
-
-    ui->tabWidget->setTabEnabled(4, true);
-    ui->tabWidget->setTabEnabled(3, false);
-
-    mix();
-    ui->radioButton_4_1->move(390, mas[0]);
-    ui->radioButton_4_2->move(390, mas[1]);
-    ui->radioButton_4_3->move(390, mas[2]);
-    ui->radioButton_4_4->move(390, mas[3]);
+    processRadioButton(ui->radioButton_3_3,ui->radioButton_3_1, ui->radioButton_3_2, ui->radioButton_3_4, 2);
     ui->pushButton_4_accept->setEnabled(false);
 }
 
@@ -292,24 +277,7 @@ void MainWindow::on_radioButton_4_4_clicked()
 
 void MainWindow::on_pushButton_4_accept_clicked()
 {
-    if (ui->radioButton_4_2->isChecked()){
-        ui->tableWidget->item(3,0)->setText("+");
-        score+=1;
-        ui->tableWidget->item(3,0)->setBackground(Qt::green);
-    }
-    else{
-        ui->tableWidget->item(3,0)->setText("-");
-        ui->tableWidget->item(3,0)->setBackground(Qt::red);
-    }
-
-    ui->tabWidget->setTabEnabled(5, true);
-    ui->tabWidget->setTabEnabled(4, false);
-
-    mix();
-    ui->radioButton_5_1->move(390, mas[0]);
-    ui->radioButton_5_2->move(390, mas[1]);
-    ui->radioButton_5_3->move(390, mas[2]);
-    ui->radioButton_5_4->move(390, mas[3]);
+    processRadioButton(ui->radioButton_4_2, ui->radioButton_4_3, ui->radioButton_4_1, ui->radioButton_4_4, 3);
     ui->pushButton_5_accept->setEnabled(false);
 }
 
@@ -336,38 +304,22 @@ void MainWindow::on_radioButton_5_4_clicked()
 
 void MainWindow::on_pushButton_5_accept_clicked()
 {
-    if (ui->radioButton_4_2->isChecked()){
-        ui->tableWidget->item(4,0)->setText("+");
-        score+=1;
-        ui->tableWidget->item(4,0)->setBackground(Qt::green);
-    }
-    else{
-        ui->tableWidget->item(4,0)->setText("-");
-        ui->tableWidget->item(4,0)->setBackground(Qt::red);
-    }
-
-    ui->tabWidget->setTabEnabled(6, true);
+    processRadioButton(ui->radioButton_5_2,ui->radioButton_5_1, ui->radioButton_5_3, ui->radioButton_5_4, 4);
     ui->pushButton_finish->setVisible(false);
-    ui->tabWidget->setTabEnabled(5, false);
     timer->stop();
 
     if (score == 5){
-        ui->label_result->setText("Результат: Прирожденный аналитик МАТЧ ТВ");
+            ui->label_result->setText("Результат: Прирожденный аналитик МАТЧ ТВ");
     }
     else if (score == 4){
-        ui->label_result->setText("Результат: Спорт-ваше второе имя");
+            ui->label_result->setText("Результат: Спорт-ваше второе имя");
     }
     else if (score == 3){
-        ui->label_result->setText("Результат: Любитель спорта");
+            ui->label_result->setText("Результат: Любитель спорта");
     }
     else{
-        ui->label_result->setText("Результат: Вы киберспортсмен");
+            ui->label_result->setText("Результат: Вы киберспортсмен");
     }
 }
 
-
-void MainWindow::on_pushButton_exit_clicked()
-{
-    QCoreApplication::quit();
-}
 

@@ -4,12 +4,15 @@
 #include <QCoreApplication>
 #include <QMainWindow>
 #include <QMessageBox>
+#include <QPixmap>
 #include <QTimer>
 #include <QTime>
 #include <time.h>
 #include <QMovie>
 #include <QLabel>
 #include <QSize>
+#include <QVector>
+#include <QRadioButton>
 
 
 QT_BEGIN_NAMESPACE
@@ -32,7 +35,6 @@ private slots:
     void on_pushButton_finish_clicked();
 
     void mix();
-
 
     void on_radioButton_1_1_clicked();
 
@@ -86,16 +88,15 @@ private slots:
 
     void on_radioButton_5_4_clicked();
 
-    void on_pushButton_exit_clicked();
+    void processRadioButton(QRadioButton *radioButton,QRadioButton *radioButton_1, QRadioButton *radioButton_2, QRadioButton *radioButton_3, int i);
 
 private:
     Ui::MainWindow *ui;
     QTimer *timer;
     QMovie *start_gif;
     QLabel *start_label;
-    int mas [4] = {150, 200, 250, 300};
     int counter;
     int score;
-
+    int mas [4] = {150, 200, 250, 300};
 };
 #endif // MAINWINDOW_H
