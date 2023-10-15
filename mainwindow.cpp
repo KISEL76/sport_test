@@ -25,7 +25,7 @@ MainWindow::MainWindow(QWidget *parent) // Конструктор
     score = 0;
 
     start_label = new QLabel(this);
-    start_gif = new QMovie("/Users/kisel/Documents/Qt/Projects/test/pics/start-gravityfalls.gif");
+    start_gif = new QMovie(":/pics/start-gravityfalls.gif");
     start_label->setMovie(start_gif);
     start_label->setScaledContents(true);
     start_label->move(500, 80);
@@ -33,15 +33,15 @@ MainWindow::MainWindow(QWidget *parent) // Конструктор
     start_label->show();
     start_gif->start();
 
-    QPixmap pic_1 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8318.JPG");
+    QPixmap pic_1 (":/pics/IMG_8318.JPG");
     ui->label->setPixmap(pic_1);
-    QPixmap pic_2 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8319.JPG");
+    QPixmap pic_2 (":/pics/IMG_8319.JPG");
     ui->label_6->setPixmap(pic_2);
-    QPixmap pic_3 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8320.JPG");
+    QPixmap pic_3 (":/pics/IMG_8320.JPG");
     ui->label_7->setPixmap(pic_3);
-    QPixmap pic_4 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8321.JPG");
+    QPixmap pic_4 (":/pics/IMG_8321.JPG");
     ui->label_8->setPixmap(pic_4);
-    QPixmap pic_5 ("/Users/kisel/Documents/Qt/Projects/test/pics/IMG_8322.JPG");
+    QPixmap pic_5 (":/pics/IMG_8322.JPG");
     ui->label_9->setPixmap(pic_5);
 }
 

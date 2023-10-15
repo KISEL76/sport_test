@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>pics/IMG_8318.JPG</file>
+        <file>pics/IMG_8319.JPG</file>
+        <file>pics/IMG_8320.JPG</file>
+        <file>pics/IMG_8321.JPG</file>
+        <file>pics/IMG_8322.JPG</file>
+        <file>pics/start-gravityfalls.gif</file>
+    </qresource>
+</RCC>
